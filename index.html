@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Your Calender</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Roy Willis">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <wrapper id="wrapper">
+        <div id="logo">
+            <img src="logo.jpg">
+        </div>
+        <div id="the-calendar">
+            <div id="calendar-head">
+                <form id="year-month-selection">
+                    <label for="month"></label>
+                    <select class="chead-body" name="month" id="month" onchange="jump()">
+                        <option value=0>Jan</option>
+                        <option value=1>Feb</option>
+                        <option value=2>Mar</option>
+                        <option value=3>Apr</option>
+                        <option value=4>May</option>
+                        <option value=5>Jun</option>
+                        <option value=6>Jul</option>
+                        <option value=7>Aug</option>
+                        <option value=8>Sep</option>
+                        <option value=9>Oct</option>
+                        <option value=10>Nov</option>
+                        <option value=11>Dec</option>
+                    </select>
+        
+        
+                    <label for="year"></label>
+                    <select class="chead-body" name="year" id="year" onchange="jump()">
+                    </select>
+                </form>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+    
+                </thead>
+    
+                <tbody id="body-calendar">
+    
+                </tbody>
+            </table>
+    
+            <div class="button-navigation">
+                <button class="button" onclick="previous()">Previous</button>
+                <button class="button" onclick="next()">Next</button>
+            </div>
+    
+            <h3 id="monthAndYear"></h3>
+    
+        </div>
+    
+        <div id="event-update" style="display: none;">
+            <form onsubmit="return inputEvent()" action="#">
+                <label for="event-input" id="event-label">
+                </label> 
+                <input type="text" id="event-input" name="event-input"> <br>
+                <input type="submit" value="Input" style=" border: none;
+                width: 70px;
+                padding: 8px 0;
+                text-align: center;
+                text-decoration: none;
+                background-color: white;
+                color: black; 
+                display: inline-block;
+                border: 2px solid rgb(241, 245, 31);
+                font-size: 16px;
+                margin: 4px 2px;
+                transition-duration: 0.3s;
+                cursor: pointer;">
+    
+            </form>
+        </div>
+    </wrapper>
+
+    <div id="events-list">
+        <p>There is no event yet</p>
+        <ul id="bullet-list" style="list-style: none;">
+
+        </ul>
+    </div>
+
+    <script src="script-main.js"></script>
+</body>
+</html>
